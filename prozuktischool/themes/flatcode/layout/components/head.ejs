@@ -1,0 +1,41 @@
+<head>
+    <meta charset="UTF-8">
+
+    <%
+
+    var title = page.title;
+
+    if (is_home()) {
+      title = config.subtitle;
+      page.title = config.subtitle;
+    } else if (is_archive()){
+      title = __('archive_a');
+
+      if (is_month()){
+        title += ': ' + page.year + '/' + page.month;
+      } else if (is_year()){
+        title += ': ' + page.year;
+      }
+    } else if (is_category()){
+      title = page.category;
+    } else if (is_tag()){
+      title = page.tag;
+    }
+
+    %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <%- open_graph({title: config.title + ' | ' + page.title,image: config.site_logo,twitter_id: theme.twitter, google_plus: theme.google_plus, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id, url: 'http://' + page.permalink}) %>
+
+    <title><%= config.title %> <% if (title){ %> | <%= title %><% } %></title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/master/devicon.min.css">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-red.min.css" />
+    <%- css('css/rrssb.css') %>
+    <%- css('css/prism.css') %>
+    <%- css('css/style.css') %>
+</head>

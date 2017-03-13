@@ -1,0 +1,26 @@
+<%
+    var title = '';
+    if (page.category) title = page.category;
+    if (page.tag) title = page.tag;
+    if (page.archive){
+        if (page.year) title = page.year + (page.month ? '/' + page.month : '');
+        else title = "সকল লেখা";
+    }
+%>
+<div class="latestPost">
+  <div class="mdl-grid">
+
+    <% if(title) { %>
+
+    <div class="mdl-cell mdl-cell--12-col sectionHeader">
+      <h4><span><%- title %></span></h4>
+    </div>
+    <% } %>
+          <% page.posts.each(function(item){ %>
+              <%- partial('components/post-summery', {item: item}) %>
+          <% }); %>
+    </div>
+
+    <%- partial('components/pagination') %>
+
+</div>

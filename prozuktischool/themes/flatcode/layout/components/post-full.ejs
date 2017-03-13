@@ -1,0 +1,28 @@
+<div class="mdl-cell mdl-cell--9-col mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+    <div class="postContainer">
+        <div class="postMeta">
+            <div class="sectionHeader postTitle">
+                <h4><%- item.title || item.link%></h4>
+            </div>
+            <div class="postInfo">
+              <p>
+                <% if(item.author) { %>
+                লিখেছেন: <span class="author"><a href="<%= item.author_uri %>"><%- item.author %></a></span>
+                <% } %>
+                <span class="devider"></span>
+                প্রকাশকাল: <span class="date"><a href=""><%= item.date.format(config.date_format) %></a></span>
+                <span class="devider"></span>
+                <%- partial('post-tags', {item: item}) %>
+              </p>
+            </div>
+        </div>
+        <div class="postBody">
+          <%- item.content %>
+        </div>
+    </div>
+
+    <%- partial('share') %>
+
+      <%- partial('comments') %>
+
+</div>

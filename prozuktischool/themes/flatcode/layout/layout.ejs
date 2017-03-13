@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- partial('components/head') %>
+
+<body>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+        <%- partial('components/header') %>
+        <%- partial('components/top-nav') %>
+
+        <main class="page-content">
+
+            <%- body %>
+
+        </main>
+
+
+        <%- partial('components/footer') %>
+
+    </div>
+
+<%- partial('components/after-footer') %>
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+<script  src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<%- js('js/rrssb.min.js') %>
+<%- js('js/prism.js') %>
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script id="dsq-count-scr" src="//prozuktischool.disqus.com/count.js" async></script>
+<script>
+var disqus_config = function () {
+this.page.url = 'http://<%= page.permalink %>';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '<%= page.permalink %>'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//prozuktischool.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>

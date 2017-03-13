@@ -1,0 +1,8 @@
+<div class="mdl-layout__drawer">
+    <span class="mdl-layout-title"><%= config.title %></span>
+    <nav class="mdl-navigation">
+        <% for (var i in theme.menu){ %>
+                <a class="mdl-navigation__link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+        <% } %>
+    </nav>
+</div>
